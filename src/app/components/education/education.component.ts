@@ -10,7 +10,7 @@ export class EducationComponent {
   education = [
     {
       degree: 'Ingeniería en Sistemas',
-      institution: 'Universidad',
+      institution: 'Universidad Mariano Gálvez de Guatemala',
       status: 'Finalizando segundo año',
       period: '2023 - Actualidad',
       description: 'Formación en desarrollo de software, bases de datos, arquitectura de sistemas y tecnologías de la información.'

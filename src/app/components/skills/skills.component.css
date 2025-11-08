@@ -70,21 +70,13 @@
 }
 
 .skill-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .skill-name {
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-primary);
-}
-
-.skill-percentage {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--primary-color);
 }
 
 .skill-bar-container {

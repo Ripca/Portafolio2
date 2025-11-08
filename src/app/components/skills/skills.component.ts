@@ -21,7 +21,7 @@ export class SkillsComponent {
   skillCategories: SkillCategory[] = [
     {
       category: 'Frontend',
-      icon: '🎨',
+      icon: '</>', // Código HTML
       skills: [
         { name: 'HTML', level: 4 },
         { name: 'CSS', level: 4 },
@@ -35,7 +35,7 @@ export class SkillsComponent {
     },
     {
       category: 'Backend',
-      icon: '⚙️',
+      icon: '{ }', // Llaves de código
       skills: [
         { name: 'C#', level: 4 },
         { name: 'APIs .NET Framework', level: 4 },
@@ -47,7 +47,7 @@ export class SkillsComponent {
     },
     {
       category: 'Bases de Datos',
-      icon: '💾',
+      icon: '🗄️', // Archivador/Base de datos
       skills: [
         { name: 'Oracle', level: 3 },
         { name: 'MySQL', level: 3 },
@@ -74,7 +74,7 @@ export class SkillsComponent {
     },
     {
       category: 'Cloud & AWS',
-      icon: '☁️',
+      icon: '☁️', // Nube AWS
       skills: [
         { name: 'EC2', level: 3 },
         { name: 'RDS', level: 3 },

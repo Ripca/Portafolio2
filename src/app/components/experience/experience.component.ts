@@ -13,15 +13,16 @@ export class ExperienceComponent {
       position: 'Desarrollador Full Stack',
       period: 'Marzo 2024 - Actualidad',
       provider: 'IT Profis (Proveedor de Servicios Informáticos)',
-      description: 'Desarrollo y mantenimiento de aplicaciones empresariales, implementación de APIs REST, integración con servicios AWS, y gestión de procesos CI/CD.',
+      description: 'Desarrollo y mantenimiento de aplicaciones empresariales, implementación de APIs REST, y gestión de procesos CI/CD.',
       responsibilities: [
         'Desarrollo de aplicaciones web con ASP.NET y Angular',
         'Implementación y consumo de APIs REST con .NET Framework y .NET Core',
         'Gestión de autenticación con JWT, JWS y JWE',
-        'Integración con servicios AWS (EC2, RDS, API Gateway, Lambda, Cognito)',
+        'Desarrollo de servicios SOAP para integración con sistemas legacy',
         'Automatización de procesos con Power Automate',
         'Implementación de autenticación con Microsoft Entra ID (2FA)',
-        'Administración de servidores IIS y Apache Tomcat'
+        'Administración de servidores IIS y Apache Tomcat',
+        'Generación de reportes con Jasper Reports'
       ]
     }
   ];

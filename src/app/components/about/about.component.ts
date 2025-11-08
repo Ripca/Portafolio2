@@ -8,18 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   personalInfo = {
-    name: 'Gerson Rodríguez',
+    name: 'Ricardo Arrecis',
     title: 'Desarrollador Full Stack',
-    email: 'grodriguez@mapfre.com.gt',
+    email: 'ricardoarrecisrivera@gmail.com',
     phone: '+502 XXXX-XXXX',
     location: 'Guatemala',
-    description: 'Desarrollador Full Stack con experiencia en tecnologías web modernas, especializado en desarrollo de aplicaciones empresariales y servicios en la nube.'
+    description: 'Desarrollador Full Stack con experiencia en tecnologías web modernas, especializado en desarrollo de aplicaciones empresariales y servicios backend.'
   };
 
   socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/devgerrod', icon: 'github.svg' },
-    { name: 'LinkedIn', url: '#', icon: 'linkedin.svg' },
-    { name: 'Twitter', url: '#', icon: 'twitter.svg' }
+    { name: 'GitHub', url: 'https://github.com/Ripca', icon: 'github.svg' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ricardo-arrecis-rivera/', icon: 'linkedin.svg' }
   ];
 
   scrollToContact(): void {
