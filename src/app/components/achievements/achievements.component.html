@@ -1,0 +1,21 @@
+<div class="achievements-grid">
+  <div *ngFor="let achievement of achievements; let i = index" class="achievement-card" [style.animation-delay.s]="i * 0.2">
+    <div class="achievement-icon">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="8" r="7"></circle>
+        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+      </svg>
+    </div>
+    
+    <div class="achievement-content">
+      <div class="achievement-header">
+        <h3 class="achievement-title">{{ achievement.title }}</h3>
+        <span class="achievement-date">{{ achievement.date }}</span>
+      </div>
+      
+      <h4 class="achievement-organization">{{ achievement.organization }}</h4>
+      <p class="achievement-description">{{ achievement.description }}</p>
+    </div>
+  </div>
+</div>
+

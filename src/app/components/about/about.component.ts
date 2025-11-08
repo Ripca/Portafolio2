@@ -13,7 +13,7 @@ export class AboutComponent {
     email: 'ricardoarrecisrivera@gmail.com',
     phone: '+502 XXXX-XXXX',
     location: 'Guatemala',
-    description: 'Desarrollador Full Stack con experiencia en tecnologías web modernas, especializado en desarrollo de aplicaciones empresariales y servicios backend.'
+    description: 'Estudiante de 4.º semestre de Ingeniería en Sistemas, con conocimientos en desarrollo web frontend y backend. Alta motivación por aprender nuevas tecnologías y fortalecer las actuales. Capacidad para trabajar en equipo y aportar soluciones en distintos entornos.'
   };
 
   socialLinks = [

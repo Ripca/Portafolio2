@@ -11,7 +11,7 @@ export class EducationComponent {
     {
       degree: 'Ingeniería en Sistemas',
       institution: 'Universidad Mariano Gálvez de Guatemala',
-      status: 'Finalizando segundo año',
+      status: 'Cursando 4.º semestre',
       period: '2023 - Actualidad',
       description: 'Formación en desarrollo de software, bases de datos, arquitectura de sistemas y tecnologías de la información.'
     }
