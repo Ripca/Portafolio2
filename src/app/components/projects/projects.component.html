@@ -1,0 +1,60 @@
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="section-title">Proyectos</h2>
+    
+    <div class="construction-banner">
+      <div class="construction-icon">🚧</div>
+      <h3>Sección en Construcción</h3>
+      <p>Próximamente se agregarán más proyectos</p>
+    </div>
+
+    <div class="projects-grid">
+      <div *ngFor="let project of projects" class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <span class="project-status" [ngClass]="getStatusClass(project.status)">
+            {{ getStatusText(project.status) }}
+          </span>
+        </div>
+        
+        <p class="project-description">{{ project.description }}</p>
+        
+        <div class="technologies">
+          <span class="tech-label">Tecnologías:</span>
+          <div class="tech-tags">
+            <span *ngFor="let tech of project.technologies" class="tech-tag">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+
+        <div class="project-links">
+          <a *ngIf="project.repoUrl" [href]="project.repoUrl" target="_blank" class="project-link repo-link">
+            <span class="link-icon">💻</span>
+            <span>Repositorio</span>
+          </a>
+          <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="project-link live-link">
+            <span class="link-icon">🌐</span>
+            <span>Ver Proyecto</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Placeholder cards for future projects -->
+      <div class="project-card placeholder-card">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">📁</div>
+          <p>Próximo Proyecto</p>
+        </div>
+      </div>
+
+      <div class="project-card placeholder-card">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">📁</div>
+          <p>Próximo Proyecto</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
