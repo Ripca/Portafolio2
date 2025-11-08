@@ -1,16 +1,35 @@
 ﻿<!-- Portafolio Web - Gerson Rodríguez -->
 <app-header></app-header>
 
-<main class="main">
-  <section class="column column--left">
-    <app-about></app-about>
-    <app-experience></app-experience>
-    <app-education></app-education>
+<app-about></app-about>
+
+<main class="main-content">
+  <section id="experience" class="section">
+    <div class="section-container">
+      <h2 class="section-title">Experiencia Profesional</h2>
+      <app-experience></app-experience>
+    </div>
   </section>
 
-  <section class="column column--right">
-    <app-skills></app-skills>
-    <app-projects></app-projects>
+  <section id="education" class="section section-alt">
+    <div class="section-container">
+      <h2 class="section-title">Educación</h2>
+      <app-education></app-education>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-container">
+      <h2 class="section-title">Habilidades Técnicas</h2>
+      <app-skills></app-skills>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-alt">
+    <div class="section-container">
+      <h2 class="section-title">Proyectos</h2>
+      <app-projects></app-projects>
+    </div>
   </section>
 </main>
 

@@ -1,89 +1,145 @@
-.card {
-  padding: 1em;
-  background-color: var(--bg-card-color);
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background: var(--bg-card);
+  padding: 2rem;
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.card__title {
-  margin: 0 0 1em 0;
-  font-size: 1.2rem;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.skills {
-  padding: 0.9em 0;
+.skill-category:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
 }
 
-.skills__header {
-  width: 200px;
+.category-header {
   display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-bottom: 1em;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
 }
 
-.skills__level {
-  font-size: 0.7rem;
-  opacity: 0.7;
+.category-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 12px;
 }
 
-.skills__item {
+.category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.8em;
 }
 
-.skills__tech {
-  margin: 0;
-  font-size: 0.85rem;
+.skill-name {
+  font-size: 0.95rem;
   font-weight: 500;
+  color: var(--text-primary);
 }
 
-.skills__bar,
-.skills__bar::after {
-  position: relative;
-  width: 200px;
+.skill-percentage {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.skill-bar-container {
+  width: 100%;
   height: 8px;
-  background-color: #888;
-  border-radius: var(--border-radius);
+  background: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
   overflow: hidden;
 }
 
-.skills__bar::after {
-  content: "";
+.skill-bar::after {
+  content: '';
   position: absolute;
-  background-color: var(--primary-color);
-  transition: var(--transition);
-  left: -200px;
-  animation: skills-bar-fill 2s ease-in-out forwards;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
 }
 
-/* Skill levels - 5 levels (1-5) mapped to percentages */
-.skills__bar--10::after { --skills-bar-length: 20%; }  /* Level 1 - Bajo */
-.skills__bar--20::after { --skills-bar-length: 40%; }  /* Level 2 - Bajo-Medio */
-.skills__bar--30::after { --skills-bar-length: 60%; }  /* Level 3 - Medio */
-.skills__bar--40::after { --skills-bar-length: 80%; }  /* Level 4 - Medio-Alto */
-.skills__bar--50::after { --skills-bar-length: 100%; } /* Level 5 - Alto */
-
-@keyframes skills-bar-fill {
-  to {
-    transform: translateX(var(--skills-bar-length));
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 
 @media (max-width: 768px) {
-  .skills__header {
-    width: 150px;
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 
-  .skills__bar,
-  .skills__bar::after {
-    width: 150px;
+  .skill-category {
+    padding: 1.5rem;
   }
 
-  .skills__tech {
-    font-size: 0.75rem;
+  .category-title {
+    font-size: 1.1rem;
+  }
+
+  .skill-name {
+    font-size: 0.875rem;
   }
 }
 

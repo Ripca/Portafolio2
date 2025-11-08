@@ -1,42 +1,71 @@
-<article class="card card--profile">
-  <div class="card__image-container">
-    <div class="card__image--profile">
-      <span class="avatar-text">{{ personalInfo.name.charAt(0) }}</span>
-    </div>
-  </div>
+<section id="about" class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="greeting">Hola, soy</p>
+      <h1 class="hero-title">{{ personalInfo.name }}</h1>
+      <h2 class="hero-subtitle">{{ personalInfo.title }}</h2>
+      <p class="hero-description">{{ personalInfo.description }}</p>
 
-  <div class="card__header">
-    <h2 class="card__title no__margin">{{ personalInfo.name }}</h2>
-    <div class="card__subtitle__container">
-      <p class="card__subtitle">{{ personalInfo.title }}</p>
-      <a href="#" class="button button--primary" target="_blank">CV</a>
-    </div>
-  </div>
+      <div class="hero-actions">
+        <button class="btn btn-primary">
+          <span>Descargar CV</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </button>
+        <button class="btn btn-outline" (click)="scrollToContact()">
+          <span>Contacto</span>
+        </button>
+      </div>
 
-  <div class="card__body">
-    <div class="card__link">
-      <i class="icon">📧</i>
-      <a [href]="'mailto:' + personalInfo.email">{{ personalInfo.email }}</a>
-    </div>
-    <div class="card__link">
-      <i class="icon">📍</i>
-      <a>{{ personalInfo.location }}</a>
+      <div class="contact-info">
+        <a [href]="'mailto:' + personalInfo.email" class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>{{ personalInfo.email }}</span>
+        </a>
+        <div class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>{{ personalInfo.location }}</span>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" class="social-link" [title]="link.name">
+          <img [src]="'assets/icons/' + link.icon" [alt]="link.name" class="social-icon">
+        </a>
+      </div>
     </div>
 
-    <p class="card__text">{{ personalInfo.description }}</p>
-
-    <div class="container__social">
-      <div class="social">
-        <div *ngFor="let link of socialLinks" class="social__icon">
-          <a [href]="link.url" target="_blank">
-            <span>{{ link.icon }}</span>
-          </a>
-          <a [href]="link.url" target="_blank">
-            <span>{{ link.icon }}</span>
-          </a>
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <div class="avatar-circle">
+          <span class="avatar-letter">{{ personalInfo.name.charAt(0) }}</span>
+        </div>
+        <div class="floating-card card-1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <span>Full Stack</span>
+        </div>
+        <div class="floating-card card-2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>Web Dev</span>
         </div>
       </div>
     </div>
   </div>
-</article>
+</section>
 

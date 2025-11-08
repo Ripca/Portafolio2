@@ -1,70 +1,186 @@
-.card {
-  padding: 1em;
-  background-color: var(--bg-card-color);
+.experience-timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -3.5rem;
+  top: 0;
+}
+
+.marker-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 4px solid var(--bg-color);
+  box-shadow: 0 0 0 4px var(--primary-light);
+  position: relative;
+}
+
+.marker-dot::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--primary-color);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  padding: 2rem;
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
 }
 
-.card__title {
-  margin: 0 0 1em 0;
-  font-size: 1.2rem;
+.timeline-content:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateX(5px);
 }
 
-.experience {
+.timeline-header {
   display: flex;
-  align-items: start;
-  margin-bottom: 1em;
-  padding: 1em;
-  border: 2px solid var(--primary-color);
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.experience__time {
-  font-size: 0.8rem;
-  margin-bottom: 0.5em;
-  opacity: 0.8;
+.company-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
 }
 
-.experience__title {
-  margin: 0 0 0.5em 0;
+.position-title {
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--primary-color);
-  transition: var(--transition);
-  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0;
 }
 
-.experience__position {
-  margin: 0 0 0.3em 0;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.experience__provider {
-  font-size: 0.85rem;
+.provider-name {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
   font-style: italic;
-  opacity: 0.7;
-  margin-bottom: 0.5em;
-}
-
-.experience__description {
-  font-size: 0.85rem;
-  line-height: 1.6;
   margin: 0;
 }
 
+.period-badge {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.job-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.responsibilities h5 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.responsibilities ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.responsibilities li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.responsibilities li svg {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  color: var(--primary-color);
+}
+
 @media (max-width: 768px) {
-  .experience {
-    padding: 0.8em;
+  .experience-timeline {
+    padding-left: 2rem;
   }
 
-  .experience__title {
-    font-size: 1rem;
+  .timeline-marker {
+    left: -2.5rem;
   }
 
-  .experience__description {
-    font-size: 0.8rem;
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .company-name {
+    font-size: 1.25rem;
+  }
+
+  .position-title {
+    font-size: 1.1rem;
+  }
+
+  .period-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.875rem;
   }
 }
 

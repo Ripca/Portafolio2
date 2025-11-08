@@ -17,8 +17,16 @@ export class AboutComponent {
   };
 
   socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/devgerrod', icon: '💻' },
-    { name: 'LinkedIn', url: '#', icon: '💼' }
+    { name: 'GitHub', url: 'https://github.com/devgerrod', icon: 'github.svg' },
+    { name: 'LinkedIn', url: '#', icon: 'linkedin.svg' },
+    { name: 'Twitter', url: '#', icon: 'twitter.svg' }
   ];
+
+  scrollToContact(): void {
+    const element = document.getElementById('projects');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
 

@@ -1,12 +1,21 @@
-/* Global Styles - Portafolio Web */
+/* Global Styles - Portafolio Angular */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
   --primary-color: #3182ed;
-  --text-color: #4f4f4f;
-  --bg-color: #e4d8d8;
-  --bg-card-color: #fafafa;
-  --transition: color 0.4s, background-color 0.2s ease-in-out;
-  --border-radius: 0.4em;
+  --primary-dark: #1565c0;
+  --primary-light: #64b5f6;
+  --accent-color: #ff4081;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --bg-color: #f5f5f5;
+  --bg-card: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius: 8px;
 }
 
 * {
@@ -18,16 +27,22 @@
 body {
   margin: 0;
   background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: var(--transition);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-primary);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.dark {
-  --text-color: #d4d4d4;
-  --bg-color: #262626;
-  --bg-card-color: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --bg-color: #121212;
+  --bg-card: #1e1e1e;
+  --border-color: #333333;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.5);
 }
 
 a {
@@ -37,7 +52,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.8;
+  color: var(--primary-dark);
 }
 
 img {
@@ -47,12 +62,22 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
+  line-height: 1.2;
 }
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 
 /* Scrollbar personalizado */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -61,9 +86,30 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-color);
+  background: var(--primary-dark);
+}
+
+/* Utilidades */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
 }

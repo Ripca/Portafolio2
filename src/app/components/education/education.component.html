@@ -1,11 +1,23 @@
-<article class="card card--education">
-  <h2 class="card__title">Educación</h2>
-  <div *ngFor="let edu of education" class="experience">
-    <div class="experience__info">
-      <h3 class="experience__title">{{ edu.degree }}</h3>
-      <p class="experience__description">{{ edu.status }}</p>
-      <p class="experience__description">{{ edu.description }}</p>
+<div class="education-grid">
+  <div *ngFor="let edu of education" class="education-card">
+    <div class="card-icon">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+      </svg>
+    </div>
+
+    <div class="card-content">
+      <h3 class="degree-title">{{ edu.degree }}</h3>
+      <p class="institution">{{ edu.institution }}</p>
+
+      <div class="status-container">
+        <span class="status-badge">{{ edu.status }}</span>
+        <span class="period">{{ edu.period }}</span>
+      </div>
+
+      <p class="description">{{ edu.description }}</p>
     </div>
   </div>
-</article>
+</div>
 

@@ -1,51 +1,117 @@
-.card {
-  padding: 1em;
-  background-color: var(--bg-card-color);
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.education-card {
+  background: var(--bg-card);
+  padding: 2rem;
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
-}
-
-.card__title {
-  margin: 0 0 1em 0;
-  font-size: 1.2rem;
-}
-
-.experience {
   display: flex;
-  align-items: start;
-  margin-bottom: 1em;
-  padding: 1em;
-  border: 2px solid var(--primary-color);
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.experience__title {
-  margin: 0 0 0.5em 0;
-  color: var(--primary-color);
-  transition: var(--transition);
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(49, 130, 237, 0.3);
+}
+
+.card-icon svg {
+  color: white;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.degree-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.institution {
   font-size: 1.1rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
 }
 
-.experience__description {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  margin: 0 0 0.5em 0;
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.status-badge {
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.period {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .experience {
-    padding: 0.8em;
+  .education-grid {
+    grid-template-columns: 1fr;
   }
 
-  .experience__title {
+  .education-card {
+    padding: 1.5rem;
+  }
+
+  .degree-title {
+    font-size: 1.25rem;
+  }
+
+  .institution {
     font-size: 1rem;
-  }
-
-  .experience__description {
-    font-size: 0.8rem;
   }
 }
 

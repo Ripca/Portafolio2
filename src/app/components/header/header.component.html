@@ -1,18 +1,31 @@
-<header class="header">
-  <div class="switches">
-    <div class="toggle-theme" (click)="toggleTheme()">
-      <span class="toggle-theme__icon">{{ isDarkMode ? '🌙' : '☀️' }}</span>
-      <p class="toggle-theme__text">{{ themeText }}</p>
+<header class="app-header">
+  <div class="header-container">
+    <div class="logo-section">
+      <h1 class="logo-text">GR</h1>
+      <span class="logo-subtitle">Portfolio</span>
     </div>
-  </div>
 
-  <div class="colors">
-    <div
-      *ngFor="let color of colors"
-      [attr.data-color]="color.value"
-      [style.background-color]="color.value"
-      class="colors__item colors__item--{{color.name}}"
-      (click)="changeColor(color.value)">
+    <nav class="nav-menu">
+      <a (click)="scrollToSection('about')" class="nav-link">Inicio</a>
+      <a (click)="scrollToSection('experience')" class="nav-link">Experiencia</a>
+      <a (click)="scrollToSection('skills')" class="nav-link">Habilidades</a>
+      <a (click)="scrollToSection('projects')" class="nav-link">Proyectos</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" (click)="toggleTheme()" [title]="isDarkMode ? 'Modo Claro' : 'Modo Oscuro'">
+        <span class="theme-icon">{{ isDarkMode ? '☀️' : '🌙' }}</span>
+      </button>
+
+      <div class="color-picker">
+        <button
+          *ngFor="let color of colors"
+          [style.background-color]="color.value"
+          class="color-btn"
+          [title]="'Color ' + color.name"
+          (click)="changeColor(color.value)">
+        </button>
+      </div>
     </div>
   </div>
 </header>
