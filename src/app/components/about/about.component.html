@@ -1,36 +1,42 @@
-<section id="about" class="about-section">
-  <div class="container">
-    <h2 class="section-title">Sobre Mí</h2>
-    <div class="about-content">
-      <div class="profile-image">
-        <div class="avatar">
-          <span class="avatar-text">{{ personalInfo.name.charAt(0) }}</span>
-        </div>
-      </div>
-      <div class="profile-info">
-        <h1 class="name">{{ personalInfo.name }}</h1>
-        <h3 class="title">{{ personalInfo.title }}</h3>
-        <p class="description">{{ personalInfo.description }}</p>
-        
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="icon">📧</span>
-            <span>{{ personalInfo.email }}</span>
-          </div>
-          <div class="contact-item">
-            <span class="icon">📍</span>
-            <span>{{ personalInfo.location }}</span>
-          </div>
-        </div>
+<article class="card card--profile">
+  <div class="card__image-container">
+    <div class="card__image--profile">
+      <span class="avatar-text">{{ personalInfo.name.charAt(0) }}</span>
+    </div>
+  </div>
 
-        <div class="social-links">
-          <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" class="social-link">
-            <span class="social-icon">{{ link.icon }}</span>
-            <span>{{ link.name }}</span>
+  <div class="card__header">
+    <h2 class="card__title no__margin">{{ personalInfo.name }}</h2>
+    <div class="card__subtitle__container">
+      <p class="card__subtitle">{{ personalInfo.title }}</p>
+      <a href="#" class="button button--primary" target="_blank">CV</a>
+    </div>
+  </div>
+
+  <div class="card__body">
+    <div class="card__link">
+      <i class="icon">📧</i>
+      <a [href]="'mailto:' + personalInfo.email">{{ personalInfo.email }}</a>
+    </div>
+    <div class="card__link">
+      <i class="icon">📍</i>
+      <a>{{ personalInfo.location }}</a>
+    </div>
+
+    <p class="card__text">{{ personalInfo.description }}</p>
+
+    <div class="container__social">
+      <div class="social">
+        <div *ngFor="let link of socialLinks" class="social__icon">
+          <a [href]="link.url" target="_blank">
+            <span>{{ link.icon }}</span>
+          </a>
+          <a [href]="link.url" target="_blank">
+            <span>{{ link.icon }}</span>
           </a>
         </div>
       </div>
     </div>
   </div>
-</section>
+</article>
 

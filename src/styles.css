@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles - Portafolio Web */
+
+:root {
+  --primary-color: #3182ed;
+  --text-color: #4f4f4f;
+  --bg-color: #e4d8d8;
+  --bg-card-color: #fafafa;
+  --transition: color 0.4s, background-color 0.2s ease-in-out;
+  --border-radius: 0.4em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--transition);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+body.dark {
+  --text-color: #d4d4d4;
+  --bg-color: #262626;
+  --bg-card-color: #333333;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}

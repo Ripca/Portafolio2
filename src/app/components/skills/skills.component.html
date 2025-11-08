@@ -1,32 +1,15 @@
-<section id="skills" class="skills-section">
-  <div class="container">
-    <h2 class="section-title">Conocimientos Técnicos</h2>
-    <div class="skills-grid">
-      <div *ngFor="let category of skillCategories" class="skill-category">
-        <div class="category-header">
-          <span class="category-icon">{{ category.icon }}</span>
-          <h3 class="category-title">{{ category.category }}</h3>
-        </div>
-        <div class="skills-list">
-          <div *ngFor="let skill of category.skills" class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">{{ skill.name }}</span>
-              <div class="skill-level">
-                <span 
-                  *ngFor="let filled of getStars(skill.level)" 
-                  class="star"
-                  [class.filled]="filled">
-                  ★
-                </span>
-              </div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" [style.width.%]="skill.level * 20"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+<article *ngFor="let category of skillCategories" class="card">
+  <h2 class="card__title">{{ category.category }}</h2>
+  <div class="skills">
+    <div class="skills__header">
+      <small class="skills__level">Inicial</small>
+      <small class="skills__level">Medio</small>
+      <small class="skills__level">Avanzado</small>
+    </div>
+    <div *ngFor="let skill of category.skills" class="skills__item">
+      <p class="skills__tech">{{ skill.name }}</p>
+      <div class="skills__bar" [ngClass]="'skills__bar--' + (skill.level * 10)"></div>
     </div>
   </div>
-</section>
+</article>
 

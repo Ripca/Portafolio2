@@ -18,11 +18,12 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Proyecto de Ejemplo',
-      description: 'Este es un proyecto de ejemplo que muestra la estructura de cómo se mostrarán los proyectos futuros.',
-      technologies: ['Angular', 'TypeScript', 'CSS'],
-      repoUrl: 'https://github.com/devgerrod',
-      status: 'in-progress'
+      title: 'Portafolio Web',
+      description: 'Mi primer portafolio web desarrollado con HTML, CSS y JavaScript vanilla. Incluye cambio de tema (oscuro/claro), selector de colores, y diseño responsive.',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
+      repoUrl: 'https://github.com/Ripca/Portafolio',
+      liveUrl: 'https://ricardoarrecisportfolio.netlify.app/',
+      status: 'completed'
     }
   ];
 

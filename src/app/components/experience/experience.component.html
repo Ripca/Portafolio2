@@ -1,26 +1,13 @@
-<section id="experience" class="experience-section">
-  <div class="container">
-    <h2 class="section-title">Experiencia Profesional</h2>
-    <div class="timeline">
-      <div *ngFor="let exp of experiences" class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="experience-header">
-            <h3 class="company">{{ exp.company }}</h3>
-            <span class="period">{{ exp.period }}</span>
-          </div>
-          <h4 class="position">{{ exp.position }}</h4>
-          <p class="provider">{{ exp.provider }}</p>
-          <p class="description">{{ exp.description }}</p>
-          <div class="responsibilities">
-            <h5>Responsabilidades:</h5>
-            <ul>
-              <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<article class="card card--experience">
+  <h2 class="card__title">Experiencia Profesional</h2>
+  <div *ngFor="let exp of experiences" class="experience">
+    <div class="experience__info">
+      <p class="experience__time">{{ exp.period }}</p>
+      <h3 class="experience__title">{{ exp.company }}</h3>
+      <h4 class="experience__position">{{ exp.position }}</h4>
+      <p class="experience__provider">{{ exp.provider }}</p>
+      <p class="experience__description">{{ exp.description }}</p>
     </div>
   </div>
-</section>
+</article>
 

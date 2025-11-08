@@ -1,17 +1,19 @@
 <header class="header">
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">
-        <h2>Gerson Rodríguez</h2>
-      </div>
-      <ul class="nav-menu">
-        <li><a (click)="scrollToSection('about')">Sobre Mí</a></li>
-        <li><a (click)="scrollToSection('experience')">Experiencia</a></li>
-        <li><a (click)="scrollToSection('education')">Educación</a></li>
-        <li><a (click)="scrollToSection('skills')">Conocimientos</a></li>
-        <li><a (click)="scrollToSection('projects')">Proyectos</a></li>
-      </ul>
+  <div class="switches">
+    <div class="toggle-theme" (click)="toggleTheme()">
+      <span class="toggle-theme__icon">{{ isDarkMode ? '🌙' : '☀️' }}</span>
+      <p class="toggle-theme__text">{{ themeText }}</p>
     </div>
-  </nav>
+  </div>
+
+  <div class="colors">
+    <div
+      *ngFor="let color of colors"
+      [attr.data-color]="color.value"
+      [style.background-color]="color.value"
+      class="colors__item colors__item--{{color.name}}"
+      (click)="changeColor(color.value)">
+    </div>
+  </div>
 </header>
 

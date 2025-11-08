@@ -1,18 +1,11 @@
-<section id="education" class="education-section">
-  <div class="container">
-    <h2 class="section-title">Educación</h2>
-    <div class="education-grid">
-      <div *ngFor="let edu of education" class="education-card">
-        <div class="education-icon">🎓</div>
-        <div class="education-content">
-          <h3 class="degree">{{ edu.degree }}</h3>
-          <h4 class="institution">{{ edu.institution }}</h4>
-          <div class="status-badge">{{ edu.status }}</div>
-          <p class="period">{{ edu.period }}</p>
-          <p class="description">{{ edu.description }}</p>
-        </div>
-      </div>
+<article class="card card--education">
+  <h2 class="card__title">Educación</h2>
+  <div *ngFor="let edu of education" class="experience">
+    <div class="experience__info">
+      <h3 class="experience__title">{{ edu.degree }}</h3>
+      <p class="experience__description">{{ edu.status }}</p>
+      <p class="experience__description">{{ edu.description }}</p>
     </div>
   </div>
-</section>
+</article>
 

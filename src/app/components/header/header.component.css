@@ -1,67 +1,91 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  padding: 0 1.5em;
+  background-color: var(--bg-card-color);
+  transition: var(--transition);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 
-.navbar {
-  padding: 1rem 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.switches {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo h2 {
-  color: white;
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.nav-menu {
+.toggle-theme {
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
-}
-
-.nav-menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
 }
 
-.nav-menu li a:hover {
-  opacity: 0.8;
+.toggle-theme:hover {
+  background-color: var(--bg-color);
+}
+
+.toggle-theme__icon {
+  margin-right: 0.5em;
+  font-size: 1.2rem;
+}
+
+.toggle-theme__text {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.colors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  gap: 15px;
+}
+
+.colors__item {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.colors__item:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.colors__item--blue {
+  background-color: #3182ed;
+}
+
+.colors__item--green {
+  background-color: #28e285;
+}
+
+.colors__item--purple {
+  background-color: #a231ed;
 }
 
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    gap: 1rem;
+  .header {
+    padding: 0 1em;
   }
 
-  .nav-menu {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .toggle-theme__text {
+    font-size: 0.8rem;
   }
 
-  .nav-menu li a {
-    font-size: 0.9rem;
+  .colors__item {
+    width: 20px;
+    height: 20px;
   }
 }
 
