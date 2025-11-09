@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 
 interface Skill {
   name: string;
-  level: number; // 1-5 scale
+  level: number; // 1-5
 }
 
 interface SkillCategory {
   category: string;
-  icon: string;
+  icon: string; // Clases de Font Awesome
   skills: Skill[];
 }
 
@@ -21,7 +21,7 @@ export class SkillsComponent {
   skillCategories: SkillCategory[] = [
     {
       category: 'Frontend',
-      icon: '</>', // Código HTML
+      icon: 'fa-solid fa-code',
       skills: [
         { name: 'HTML', level: 4 },
         { name: 'CSS', level: 4 },
@@ -29,41 +29,41 @@ export class SkillsComponent {
         { name: 'jQuery', level: 4 },
         { name: 'Bootstrap', level: 4 },
         { name: 'Angular', level: 2 },
-        { name: 'Web Forms ASP', level: 5 },
+        { name: 'Web Forms ASP', level: 4 },
         { name: 'Java Web JSP', level: 2 }
       ]
     },
     {
       category: 'Backend',
-      icon: '{ }', // Llaves de código
+      icon: 'fa-solid fa-gears',
       skills: [
         { name: 'C#', level: 4 },
         { name: 'APIs .NET Framework', level: 4 },
-        { name: 'APIs .NET Core', level: 4 },
+        { name: 'APIs .NET Core', level: 3 },
         { name: 'JWT / JWS / JWE', level: 4 },
-        { name: 'Servicios SOAP', level: 2 },
+        { name: 'Servicios SOAP', level: 2.5 },
         { name: 'Java', level: 2 }
       ]
     },
     {
       category: 'Bases de Datos',
-      icon: '🗄️', // Archivador/Base de datos
+      icon: 'fa-solid fa-database',
       skills: [
-        { name: 'Oracle', level: 3 },
-        { name: 'MySQL', level: 3 },
+        { name: 'Oracle', level: 3.8 },
+        { name: 'MySQL', level: 3.5 },
         { name: 'DynamoDB', level: 2 }
       ]
     },
     {
       category: 'Reportes',
-      icon: '📊',
+      icon: 'fa-solid fa-chart-column',
       skills: [
         { name: 'Jasper Reports', level: 3 }
       ]
     },
     {
       category: 'CI/CD & Control de Versiones',
-      icon: '🔄',
+      icon: 'fa-solid fa-code-branch',
       skills: [
         { name: 'Jenkins', level: 3 },
         { name: 'SonarQube', level: 3 },
@@ -74,25 +74,26 @@ export class SkillsComponent {
     },
     {
       category: 'Cloud & AWS',
-      icon: '☁️', // Nube AWS
+      icon: 'fa-solid fa-cloud',
       skills: [
         { name: 'EC2', level: 3 },
         { name: 'RDS', level: 3 },
         { name: 'API Gateway', level: 3 },
         { name: 'Lambda', level: 3 },
-        { name: 'Cognito', level: 3 }
+        { name: 'Cognito', level: 3 },
+        { name: 'IAM', level: 3 }
       ]
     },
     {
       category: 'Automatización',
-      icon: '🤖',
+      icon: 'fa-solid fa-robot',
       skills: [
         { name: 'Power Automate', level: 3 }
       ]
     },
     {
       category: 'Autenticación',
-      icon: '🔐',
+      icon: 'fa-solid fa-shield-halved',
       skills: [
         { name: 'Microsoft Entra ID', level: 4 },
         { name: 'Autenticación 2FA', level: 4 }
@@ -100,16 +101,17 @@ export class SkillsComponent {
     },
     {
       category: 'Servidores',
-      icon: '🖥️',
+      icon: 'fa-solid fa-server',
       skills: [
         { name: 'IIS', level: 3 },
-        { name: 'Apache Tomcat', level: 3 }
+        { name: 'Apache Tomcat', level: 2 }
       ]
     }
   ];
 
   getStars(level: number): boolean[] {
-    return Array(5).fill(false).map((_, i) => i < level);
+    return Array(5)
+      .fill(false)
+      .map((_, i) => i < level);
   }
 }
-

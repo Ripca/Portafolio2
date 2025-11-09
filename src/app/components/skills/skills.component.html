@@ -1,7 +1,12 @@
 <div class="skills-grid">
-  <div *ngFor="let category of skillCategories; let i = index" class="skill-category" [style.animation-delay.s]="i * 0.1">
+  <div
+    *ngFor="let category of skillCategories; let i = index"
+    class="skill-category"
+    [style.animationDelay]="(i * 0.1) + 's'"
+  >
     <div class="category-header">
-      <span class="category-icon">{{ category.icon }}</span>
+      <!-- Icono de Font Awesome tomado desde category.icon -->
+      <i [class]="category.icon + ' category-icon'"></i>
       <h3 class="category-title">{{ category.category }}</h3>
     </div>
 
@@ -17,4 +22,3 @@
     </div>
   </div>
 </div>
-

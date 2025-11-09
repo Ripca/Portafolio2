@@ -9,17 +9,13 @@ import { Component } from '@angular/core';
 export class AboutComponent {
   personalInfo = {
     name: 'Ricardo Arrecis',
-    title: 'Desarrollador Full Stack',
+    title: 'Desarrollador ',
     email: 'ricardoarrecisrivera@gmail.com',
     phone: '+502 XXXX-XXXX',
     location: 'Guatemala',
     description: 'Estudiante de 4.º semestre de Ingeniería en Sistemas, con conocimientos en desarrollo web frontend y backend. Alta motivación por aprender nuevas tecnologías y fortalecer las actuales. Capacidad para trabajar en equipo y aportar soluciones en distintos entornos.'
   };
 
-  socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/Ripca', icon: 'github.svg' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ricardo-arrecis-rivera/', icon: 'linkedin.svg' }
-  ];
 
   scrollToContact(): void {
     const element = document.getElementById('projects');

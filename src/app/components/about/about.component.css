@@ -123,45 +123,6 @@
   color: var(--primary-color);
 }
 
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-link {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--bg-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-.social-link:hover {
-  background: var(--primary-color);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-.social-icon {
-  width: 20px;
-  height: 20px;
-  filter: var(--icon-filter, invert(0.5));
-}
-
-.social-link:hover .social-icon {
-  filter: brightness(0) invert(1);
-}
-
-body.dark .social-icon {
-  filter: brightness(0) invert(1);
-}
-
-body.dark .social-link:hover .social-icon {
-  filter: brightness(0) invert(1);
-}
 
 .hero-image {
   position: relative;
@@ -271,10 +232,6 @@ body.dark .social-link:hover .social-icon {
   }
 
   .contact-info {
-    justify-content: center;
-  }
-
-  .social-links {
     justify-content: center;
   }
 
