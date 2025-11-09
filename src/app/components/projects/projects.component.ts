@@ -28,7 +28,7 @@ export class ProjectsComponent {
   ];
 
   projectImages: { [key: string]: string } = {
-    'Portafolio Web Personal': 'assets/images/PortafolioImage1.PNG'
+    'Portafolio Web Personal': '/images/PortafolioImage1.PNG'
   };
 
   getStatusText(status: string): string {
